@@ -62,3 +62,17 @@ Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
 2025-09-04 21:22:43.797 [warning] [Git][getBranch] No such branch: master
 2025-09-04 21:22:43.817 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [2ms]
 2025-09-04 21:22:43.886 [info] > git status -z -uall [81ms]
+2025-09-04 21:23:57.861 [info] > git config --get commit.template [8ms]
+2025-09-04 21:23:57.862 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2025-09-04 21:23:57.883 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [2ms]
+2025-09-04 21:23:57.928 [info] > git status -z -uall [59ms]
+2025-09-04 21:23:57.968 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [3ms]
+2025-09-04 21:23:57.977 [info] > git config --get --local branch.main.vscode-merge-base [2ms]
+2025-09-04 21:23:57.977 [warning] [Git][config] git config failed: Failed to execute git
+2025-09-04 21:23:57.986 [info] > git reflog main --grep-reflog=branch: Created from *. [2ms]
+2025-09-04 21:23:57.995 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [2ms]
+2025-09-04 21:23:57.995 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2025-09-04 21:23:57.995 [warning] [Repository][getDefaultBranch] Failed to get default branch details: Failed to execute git.
+2025-09-04 21:23:58.315 [info] > git show --textconv :producer.py [8ms]
+2025-09-04 21:23:58.320 [info] > git ls-files --stage -- producer.py [6ms]
+2025-09-04 21:23:58.329 [info] > git cat-file -s 76a3f667f793e19ecb1aa3e451af88a439612e48 [2ms]

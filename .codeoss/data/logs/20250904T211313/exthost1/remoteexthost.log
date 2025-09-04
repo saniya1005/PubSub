@@ -26,3 +26,4 @@
 2025-09-04 21:13:22.130 [info] ExtensionService#_doActivateExtension googlecloudtools.cloudcode, startup: false, activationEvent: 'onStartupFinished'
 2025-09-04 21:22:42.835 [warning] [Decorations] CAPPING events from decorations provider vscode.git 4763
 2025-09-04 21:22:43.944 [warning] [Decorations] CAPPING events from decorations provider vscode.git 4763
+2025-09-04 21:23:57.945 [warning] [Decorations] CAPPING events from decorations provider vscode.git 4763
