@@ -1,0 +1,23 @@
+2025-08-29 03:34:54.865 [info] 
+
+
+
+
+2025-08-29 03:34:54.865 [info] Extension host agent started.
+2025-08-29 03:34:54.883 [info] Started initializing default profile extensions in extensions installation folder. file:///home/saniyajackson35/.codeoss/extensions
+2025-08-29 03:34:54.891 [info] ComputeTargetPlatform: linux-x64
+2025-08-29 03:34:54.916 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/saniyajackson35/.codeoss/extensions
+2025-08-29 03:34:56.668 [info] [127.0.0.1][c45e86bc][ManagementConnection] New connection established.
+2025-08-29 03:34:56.685 [info] [127.0.0.1][dd44c7b0][ExtensionHostConnection] New connection established.
+2025-08-29 03:35:00.069 [info] [127.0.0.1][dd44c7b0][ExtensionHostConnection] <3229> Launched Extension Host Process.
+2025-08-29 04:53:25.150 [info] [127.0.0.1][dd44c7b0][ExtensionHostConnection] The client has reconnected.
+2025-08-29 04:53:25.188 [info] [127.0.0.1][c45e86bc][ManagementConnection] The client has reconnected.
+2025-08-29 04:55:35.144 [info] [127.0.0.1][c45e86bc][ManagementConnection] The client has reconnected.
+2025-08-29 04:55:35.320 [info] [127.0.0.1][dd44c7b0][ExtensionHostConnection] The client has reconnected.
+2025-08-29 04:56:02.920 [info] [127.0.0.1][dd44c7b0][ExtensionHostConnection] The client has reconnected.
+2025-08-29 04:56:03.072 [info] [127.0.0.1][c45e86bc][ManagementConnection] The client has reconnected.
+2025-08-29 04:57:32.477 [info] [127.0.0.1][c45e86bc][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+2025-08-29 05:20:24.120 [info] [127.0.0.1][c45e86bc][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+2025-08-29 05:20:24.122 [info] [127.0.0.1][c45e86bc][ManagementConnection] The client has reconnected.
+2025-08-29 05:20:24.265 [info] [127.0.0.1][dd44c7b0][ExtensionHostConnection] The client has reconnected.
+2025-08-29 05:20:56.741 [info] [127.0.0.1][c45e86bc][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...

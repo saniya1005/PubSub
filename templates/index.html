@@ -1,0 +1,111 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Messages Viewer</title>
+<style>
+body{font:14px/1.4 system-ui,Segoe UI,Arial;padding:20px;max-width:900px;margin:auto}
+form,.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+input,select,button{padding:6px 8px}
+table{border-collapse:collapse;width:100%}
+th,td{border:1px solid #ddd;padding:6px 8px}
+th{background:#f6f6f6}
+.dup{background:#ffe6e6}
+</style>
+
+<h1>Pub/Sub Demo – Publisher & Messages</h1>
+
+<h3>Publish a message</h3>
+<form id="pubForm">
+  <input name="ItemID" placeholder="ItemID" value="123">
+  <input name="Location" placeholder="Location" value="Atlanta">
+  <input name="Quantity" placeholder="Quantity" type="number" value="1" min="0">
+  <input name="TransactionDateTime" placeholder="YYYY-MM-DD HH:MM:SS">
+  <input name="TransactionNumber" placeholder="TransactionNumber (optional)">
+  <button type="submit">Publish</button>
+</form>
+<pre id="pubResult"></pre>
+
+<div class="toolbar">
+  <input id="q" placeholder="Search (ItemID/Location/Txn)">
+  <label>Sort
+    <select id="sort">
+      <option>TransactionDateTime</option>
+      <option>Quantity</option>
+      <option>ItemID</option>
+      <option>Location</option>
+      <option>TransactionNumber</option>
+    </select>
+  </label>
+  <label>Order
+    <select id="order">
+      <option value="desc" selected>desc</option>
+      <option value="asc">asc</option>
+    </select>
+  </label>
+  <label>Limit
+    <select id="limit">
+      <option>20</option><option selected>50</option><option>100</option>
+    </select>
+  </label>
+  <button id="refresh">Refresh</button>
+</div>
+
+<table id="tbl">
+  <thead>
+    <tr>
+      <th>ItemID</th><th>Location</th><th>Quantity</th>
+      <th>TransactionDateTime</th><th>TransactionNumber</th><th>pubsub_message_id</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script>
+const $ = s => document.querySelector(s);
+
+async function load() {
+  const params = new URLSearchParams({
+    q: $('#q').value.trim(),
+    sort: $('#sort').value,
+    order: $('#order').value,
+    limit: $('#limit').value
+  });
+  const res = await fetch('/api/messages?' + params.toString());
+  const data = await res.json();
+
+  // find duplicates by TransactionNumber (for highlighting)
+  const seen = new Map();
+  for (const row of data) {
+    const k = row.TransactionNumber;
+    seen.set(k, (seen.get(k) || 0) + 1);
+  }
+
+  const tbody = $('#tbl tbody');
+  tbody.innerHTML = '';
+  for (const r of data) {
+    const tr = document.createElement('tr');
+    if (r.TransactionNumber && seen.get(r.TransactionNumber) > 1) tr.classList.add('dup');
+    tr.innerHTML = `
+      <td>${r.ItemID ?? ''}</td>
+      <td>${r.Location ?? ''}</td>
+      <td>${r.Quantity ?? ''}</td>
+      <td>${r.TransactionDateTime ?? ''}</td>
+      <td>${r.TransactionNumber ?? ''}</td>
+      <td>${r.pubsub_message_id ?? ''}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+}
+
+$('#refresh').onclick = load;
+
+$('#pubForm').onsubmit = async (e) => {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const res = await fetch('/publish', { method:'POST', body: fd });
+  const json = await res.json();
+  $('#pubResult').textContent = JSON.stringify(json, null, 2);
+  setTimeout(load, 400);
+};
+
+load();
+</script>
