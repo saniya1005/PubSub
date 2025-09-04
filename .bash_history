@@ -521,3 +521,18 @@ git branch -M main
 git remote add origin https://github.com/saniya1005/PubSub.git
 # push code to GitHub
 git push -u origin main
+cd ~                      # go to your home/project folder
+git --version             # check git is installed
+# set your Git identity (GitHub username + email)
+git config --global user.name "saniya1005"
+git config --global user.email "sjack302@students.kennesaw.edu"
+# initialize repo and commit files
+git init
+git add .
+git commit -m "Initial commit from Cloud Shell"
+# set branch to main
+git branch -M main
+# connect to your GitHub repo
+git remote add origin https://github.com/saniya1005/PubSub.git
+# push code to GitHub
+git push -u origin main
