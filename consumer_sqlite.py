@@ -2,10 +2,10 @@ from google.cloud import pubsub_v1
 from google.api_core.exceptions import NotFound
 import json, sqlite3
 
-PROJECT_ID = "capstone-project-470501"
-TOPIC_ID = "KSU_Team_4"
-SUBSCRIPTION_ID = "ksu_team_4_sub"
-DB_PATH = "messages.db"
+PROJECT_ID = ""
+TOPIC_ID = ""
+SUBSCRIPTION_ID = ""
+DB_PATH = ""
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS messages (
