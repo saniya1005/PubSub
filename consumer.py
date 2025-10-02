@@ -2,9 +2,9 @@ from google.cloud import pubsub_v1
 from google.api_core.exceptions import NotFound
 import json
 
-PROJECT_ID = "capstone-project-470501"
-TOPIC_ID = "KSU_Team_4"
-SUBSCRIPTION_ID = "ksu_team_4_sub"
+PROJECT_ID = ""
+TOPIC_ID = ""
+SUBSCRIPTION_ID = ""
 
 def callback(message: pubsub_v1.subscriber.message.Message):
     try:
