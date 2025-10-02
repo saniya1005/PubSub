@@ -3,9 +3,9 @@ from google.cloud import pubsub_v1
 import sqlite3, json, uuid
 from datetime import datetime
 
-PROJECT_ID = "capstone-project-470501"
-TOPIC_ID   = "KSU_Team_4"
-DB_PATH    = "messages.db"
+PROJECT_ID = ""
+TOPIC_ID   = ""
+DB_PATH    = ""
 
 app = Flask(__name__)
 
