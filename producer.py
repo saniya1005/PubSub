@@ -2,8 +2,8 @@ from google.cloud import pubsub_v1
 import json, uuid
 from datetime import datetime
 
-PROJECT_ID = "capstone-project-470501"
-TOPIC_ID   = "KSU_Team_4"
+PROJECT_ID = ""
+TOPIC_ID   = ""
 
 def main():
     publisher = pubsub_v1.PublisherClient()
